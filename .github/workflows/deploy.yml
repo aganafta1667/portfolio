@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -23,10 +23,11 @@ jobs:
 
       - name: Build project
         run: npm run build
-          
+
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages      # Branch untuk Pages
-          folder: dist          # Folder hasil build Vite
+          branch: gh-pages          # branch untuk Pages
+          folder: dist              # folder hasil build Vite
           clean: true
+          token: ${{ secrets.GITHUB_TOKEN }}
