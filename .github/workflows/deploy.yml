@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -30,4 +30,4 @@ jobs:
           branch: gh-pages          # branch untuk Pages
           folder: dist              # folder hasil build Vite
           clean: true
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKENNEW}}   # ambil token dari repo secrets
